@@ -1,7 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta <!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
+  <title>Welcome Anime</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    #animeContainer {
+      position: relative;
+      text-align: center;
+    }
+    #welcomeText {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0,0,0,0.6);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 20px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid white;
+      width: 0;
+    }
+    #animeImage {
+      width: 250px;
+      border-radius: 10px;
+      animation: wave 2s infinite alternate;
+    }
+
+    /* حركة اليد أو الصورة */
+    @keyframes wave {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(10deg); }
+      100% { transform: rotate(-10deg); }
+    }
+  </style>
+</head>
+<body>
+  <div id="animeContainer">
+    <img id="animeImage" src="anime.png" alt="Anime Character">
+    <div id="welcomeText">ようこそ！ (Yōkoso!)</div>
+  </div>
+
+  <script>
+    // تأثير كتابة النص تدريجيًا
+    const text = "ようこそ！ (Yōkoso!)";
+    const welcomeText = document.getElementById('welcomeText');
+    let i = 0;
+
+    function typeWriter() {
+      if (i < text.length) {
+        welcomeText.style.width = `${i + 1}ch`;
+        welcomeText.innerHTML = text.substring(0, i + 1);
+        i++;
+        setTimeout(typeWriter, 150);
+      }
+    }
+
+    typeWriter();
+  </script>
+</body>
+</html>
   <title>Change Background Color</title>
 </head>
 <body>
