@@ -2,80 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Welcome Anime</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
   <style>
     body {
-      margin: 0;
-      height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      height: 100vh;
+      margin: 0;
       background-color: #f0f0f0;
       font-family: Arial, sans-serif;
     }
-    #animeContainer {
-      position: relative;
-      text-align: center;
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
     }
-    #welcomeText {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: rgba(0,0,0,0.6);
-      color: white;
-      padding: 10px 20px;
-      border-radius: 10px;
-      font-size: 20px;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 3px solid white;
-      width: 0;
-    }
-    #animeImage {
-      width: 250px;
-      border-radius: 10px;
-      animation: wave 2s infinite alternate;
-    }
-
-    /* حركة بسيطة للأنمي */
-    @keyframes wave {
-      0% { transform: rotate(0deg); }
-      50% { transform: rotate(10deg); }
-      100% { transform: rotate(-10deg); }
+    img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 <body>
-  <div id="animeContainer">
-    <img id="animeImage" src="anime.png" alt="Anime Character">
-    <div id="welcomeText">ようこそ！ (Yōkoso!)</div>
-  </div>
-
-  <!-- الصوت الترحيبي -->
-  <audio id="welcomeAudio" src="anime-girl-senpai.mp3" preload="auto"></audio>
-
-  <script>
-    // تشغيل الصوت عند تحميل الصفحة
-    window.onload = function() {
-      document.getElementById('welcomeAudio').play().catch(()=>{});
-    };
-
-    // تأثير كتابة النص تدريجيًا
-    const text = "ようこそ！ (Yōkoso!)";
-    const welcomeText = document.getElementById('welcomeText');
-    let i = 0;
-
-    function typeWriter() {
-      if (i < text.length) {
-        welcomeText.style.width = `${i + 1}ch`;
-        welcomeText.innerHTML = text.substring(0, i + 1);
-        i++;
-        setTimeout(typeWriter, 150);
-      }
-    }
-
-    typeWriter();
-  </script>
+  <h1>Welcome to My Website</h1>
+  <img src="file_0000000056986243ba9129bf37f5b639.png" alt="My Image">
 </body>
 </html>
