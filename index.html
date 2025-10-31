@@ -1,908 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime Girls Gallery | Premium Collection</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>12V DC Lamp – All You Need to Know</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Roboto+Mono&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <style>
-        /* CSS Variables */
         :root {
-            --primary-color: #ff6b8b;
-            --secondary-color: #8a2be2;
-            --dark-color: #1a1a2e;
-            --light-color: #f8f9fa;
-            --text-color: #333;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
+            --primary: #ff6b35;
+            --dark: #1a1a1a;
+            --light: #f8f9fa;
+            --gray: #555;
         }
-
-        /* Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
+        * { margin:0; padding:0; box-sizing:border-box; }
         body {
-            background-color: #f5f5f5;
-            color: var(--text-color);
-            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: var(--light);
+            line-height: 1.7;
         }
-
-        a {
-            text-decoration: none;
-            color: inherit;
+        header {
+            background: url('https://i.pinimg.com/originals/7f/3d/9e/7f3d9e8c6c1e8f7d9b2a1e3c4d5e6f7a.jpg') center/cover no-repeat;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            color: #fff;
         }
-
-        ul {
+        header::after {
+            content: '';
+            position: absolute;
+            top:0; left:0; width:100%; height:100%;
+            background: rgba(0,0,0,0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: .5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,.6);
+        }
+        .subtitle {
+            font-size: 1.4rem;
+            font-weight: 300;
+            opacity: .9;
+        }
+        nav {
+            background: rgba(26,26,26,.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top:0;
+            z-index: 100;
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,.3);
+        }
+        nav ul {
             list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
         }
-
-        .container {
-            width: 90%;
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color .3s;
+        }
+        nav a:hover { color: var(--primary); }
+        section {
+            padding: 5rem 10%;
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
+            margin: auto;
         }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background: var(--secondary-color);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow);
-        }
-
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
             position: relative;
         }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--dark-color);
-            display: inline-block;
-        }
-
-        .section-title h2::after {
+        .section-title::after {
             content: '';
-            position: absolute;
             width: 80px;
             height: 4px;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
+            background: var(--primary);
+            display: block;
+            margin: 1rem auto 0;
             border-radius: 2px;
         }
-
-        /* Header Styles */
-        header {
-            background: linear-gradient(135deg, var(--dark-color), #16213e);
-            color: white;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow);
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .card {
+            background: rgba(255,255,255,.08);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform .4s, box-shadow .4s;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,.1);
         }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0,0,0,.4);
         }
-
-        .logo i {
-            color: var(--primary-color);
-            margin-right: 10px;
-        }
-
-        .nav-links {
-            display: flex;
-        }
-
-        .nav-links li {
-            margin-left: 25px;
-        }
-
-        .nav-links a {
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            bottom: -5px;
-            left: 0;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
+        .card img {
             width: 100%;
+            height: 200px;
+            object-fit: cover;
         }
-
-        .search-bar {
-            display: flex;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
-            padding: 5px 15px;
+        .card-body {
+            padding: 1.5rem;
         }
-
-        .search-bar input {
-            background: transparent;
-            border: none;
-            color: white;
-            padding: 8px;
-            width: 200px;
-            outline: none;
-        }
-
-        .search-bar input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .search-bar button {
-            background: transparent;
-            border: none;
-            color: white;
-            cursor: pointer;
-        }
-
-        .mobile-menu {
-            display: none;
+        .card h3 {
             font-size: 1.5rem;
-            cursor: pointer;
+            margin-bottom: .75rem;
+            color: var(--primary);
         }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.8)), 
-                        url('https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 0;
+        .highlight {
+            background: rgba(255,107,53,.15);
+            padding: 2rem;
+            border-radius: 12px;
             text-align: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .hero-buttons .btn {
-            padding: 12px 30px;
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: var(--dark-color);
-        }
-
-        /* Categories Section */
-        .categories {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .category-filters {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-
-        .filter-btn {
-            padding: 8px 20px;
-            background: var(--light-color);
-            border-radius: 30px;
-            cursor: pointer;
-            transition: var(--transition);
-            font-weight: 500;
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .gallery-item {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-            height: 300px;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .item-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-            color: white;
-            padding: 20px;
-            transform: translateY(100%);
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover .item-overlay {
-            transform: translateY(0);
-        }
-
-        .item-overlay h3 {
-            margin-bottom: 5px;
-        }
-
-        .item-overlay p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        /* Featured Section */
-        .featured {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-        }
-
-        .featured-slider {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-        }
-
-        .slider-container {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .slide {
-            min-width: 100%;
-            position: relative;
-        }
-
-        .slide img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-        }
-
-        .slide-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-            color: white;
-            padding: 30px;
-        }
-
-        .slide-content h3 {
             font-size: 1.8rem;
-            margin-bottom: 10px;
+            font-family: 'Roboto Mono', monospace;
+            margin: 3rem 0;
+            border: 2px dashed var(--primary);
         }
-
-        .slider-nav {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-            padding: 0 20px;
+        .faq {
+            background: rgba(255,255,255,.05);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 1rem;
         }
-
-        .slider-nav button {
-            background: rgba(255, 255, 255, 0.3);
-            color: white;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+        .faq summary {
+            font-weight: 600;
             cursor: pointer;
-            transition: var(--transition);
-            backdrop-filter: blur(5px);
+            padding: .75rem 0;
+            border-bottom: 1px solid rgba(255,255,255,.1);
         }
-
-        .slider-nav button:hover {
-            background: rgba(255, 255, 255, 0.5);
-        }
-
-        /* About Section */
-        .about {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--dark-color);
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        .about-image {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark-color);
-            color: white;
-            padding: 60px 0 20px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 3px;
-            background: var(--primary-color);
-            bottom: 0;
-            left: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            transition: var(--transition);
-            opacity: 0.8;
-        }
-
-        .footer-links a:hover {
-            opacity: 1;
-            color: var(--primary-color);
-            padding-left: 5px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            background: var(--primary-color);
-            transform: translateY(-5px);
-        }
-
-        .footer-bottom {
+        .faq p { padding: .75rem 0; }
+        .cta {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            opacity: 0.7;
+            padding: 4rem 10%;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: #fff;
         }
-
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .about-image {
-                order: -1;
-            }
-            
-            .hero h1 {
-                font-size: 2.8rem;
-            }
+        .btn {
+            display: inline-block;
+            background: #fff;
+            color: var(--dark);
+            padding: .9rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            transition: all .3s;
+            box-shadow: 0 8px 20px rgba(0,0,0,.2);
         }
-
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,.3);
+        }
+        footer {
+            background: var(--dark);
+            color: #aaa;
+            text-align: center;
+            padding: 3rem 10%;
+            font-size: .9rem;
+        }
+        footer a { color: var(--primary); text-decoration: none; }
         @media (max-width: 768px) {
-            .nav-links, .search-bar {
-                display: none;
-            }
-            
-            .mobile-menu {
-                display: block;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero {
-                padding: 60px 0;
-            }
-            
-            .categories, .featured, .about {
-                padding: 50px 0;
-            }
+            h1 { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
+            nav ul { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
 <body>
+
     <!-- Header -->
     <header>
-        <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">
-                    <i class="fas fa-moon"></i>
-                    AnimeGallery
-                </a>
-                
-                <ul class="nav-links">
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#featured">Featured</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                
-                <div class="search-bar">
-                    <input type="text" placeholder="Search images...">
-                    <button><i class="fas fa-search"></i></button>
-                </div>
-                
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
+        <div class="hero-content">
+            <h1>12V DC Lamp Guide</h1>
+            <p class="subtitle">Everything about voltage, frequency, and real-world use</p>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Discover Beautiful Anime Girls Art</h1>
-                <p>Explore our curated collection of high-quality anime girl illustrations from talented artists around the world.</p>
-                <div class="hero-buttons">
-                    <a href="#gallery" class="btn">Browse Gallery</a>
-                    <a href="#featured" class="btn btn-secondary">View Featured</a>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#basics">Basics</a></li>
+            <li><a href="#frequency">Frequency</a></li>
+            <li><a href="#applications">Applications</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+    </nav>
+
+    <!-- Basics Section -->
+    <section id="basics">
+        <h2 class="section-title">Understanding 12V DC Lamps</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://i.pinimg.com/originals/8c/3d/7a/8c3d7a9f2b1e4d5c6a7f8e9d0c1b2a3e.jpg" alt="12V LED Bulb"/>
+                <div class="card-body">
+                    <h3>Direct Current (DC)</h3>
+                    <p>12V DC means the electricity flows in <strong>one constant direction</strong> – no oscillation, no frequency.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://i.pinimg.com/originals/a1/b2/c3/a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6.jpg" alt="Battery Powered Lamp"/>
+                <div class="card-body">
+                    <h3>Common Power Sources</h3>
+                    <p>Car batteries, solar panels, power banks, and 12V adapters are typical sources.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://i.pinimg.com/originals/4f/5e/6d/4f5e6d7c8b9a0f1e2d3c4b5a6f7e8d9c.jpg" alt="LED vs Incandescent"/>
+                <div class="card-body">
+                    <h3>LED vs Traditional Bulbs</h3>
+                    <p>LEDs dominate 12V systems: efficient, long-lasting, and low heat.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="categories" id="gallery">
-        <div class="container">
-            <div class="section-title">
-                <h2>Anime Girls Gallery</h2>
+    <!-- Frequency Section -->
+    <section id="frequency" style="background: rgba(255,255,255,.03);">
+        <h2 class="section-title">What About Hertz?</h2>
+        <div class="highlight">
+            <i class="fas fa-bolt"></i> Frequency = <strong>0 Hz</strong> for Pure DC
+        </div>
+        <p style="text-align:center; max-width:800px; margin:auto;">
+            Hertz measures <em>cycles per second</em> in <strong>Alternating Current (AC)</strong>. Since DC has no cycle, its frequency is <strong>zero</strong>.
+        </p>
+        <div class="grid" style="margin-top:3rem;">
+            <div class="card">
+                <img src="https://i.pinimg.com/originals/9e/8d/7c/9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b.jpg" alt="AC Waveform"/>
+                <div class="card-body">
+                    <h3>AC Example (220V 50Hz)</h3>
+                    <p>Electricity flips direction 50 times per second.</p>
+                </div>
             </div>
-            
-            <div class="category-filters">
-                <div class="filter-btn active">All</div>
-                <div class="filter-btn">Cute</div>
-                <div class="filter-btn">Fantasy</div>
-                <div class="filter-btn">School</div>
-                <div class="filter-btn">Magical</div>
-                <div class="filter-btn">Sci-Fi</div>
-            </div>
-            
-            <div class="gallery-grid">
-                <!-- Gallery Items -->
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1578632749014-ca77efd052eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Anime Girl 1">
-                    <div class="item-overlay">
-                        <h3>Spring Blossom</h3>
-                        <p>By ArtistName</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Anime Girl 2">
-                    <div class="item-overlay">
-                        <h3>Moonlight Dancer</h3>
-                        <p>By ArtistName</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Anime Girl 3">
-                    <div class="item-overlay">
-                        <h3>Starry Night</h3>
-                        <p>By ArtistName</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Anime Girl 4">
-                    <div class="item-overlay">
-                        <h3>Ocean Breeze</h3>
-                        <p>By ArtistName</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1542736667-069246bdbc6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Anime Girl 5">
-                    <div class="item-overlay">
-                        <h3>Cherry Blossom</h3>
-                        <p>By ArtistName</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1511984804822-e16ba72f5848?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Anime Girl 6">
-                    <div class="item-overlay">
-                        <h3>Winter Princess</h3>
-                        <p>By ArtistName</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Anime Girl 7">
-                    <div class="item-overlay">
-                        <h3>Summer Dream</h3>
-                        <p>By ArtistName</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1578632749014-ca77efd052eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Anime Girl 8">
-                    <div class="item-overlay">
-                        <h3>Celestial Maiden</h3>
-                        <p>By ArtistName</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1542736667-069246bdbc6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Anime Girl 9">
-                    <div class="item-overlay">
-                        <h3>Blossom Guardian</h3>
-                        <p>By ArtistName</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Anime Girl 10">
-                    <div class="item-overlay">
-                        <h3>Moonlight Dancer</h3>
-                        <p>By ArtistName</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Anime Girl 11">
-                    <div class="item-overlay">
-                        <h3>Starry Night</h3>
-                        <p>By ArtistName</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Anime Girl 12">
-                    <div class="item-overlay">
-                        <h3>Ocean Breeze</h3>
-                        <p>By ArtistName</p>
-                    </div>
+            <div class="card">
+                <img src="https://i.pinimg.com/originals/3c/2b/1a/3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f.jpg" alt="DC Flat Line"/>
+                <div class="card-body">
+                    <h3>DC = Flat Line</h3>
+                    <p>No flipping → No frequency → <strong>0 Hz</strong></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Section -->
-    <section class="featured" id="featured">
-        <div class="container">
-            <div class="section-title">
-                <h2>Featured Artworks</h2>
+    <!-- Applications -->
+    <section id="applications">
+        <h2 class="section-title">Real-World Uses</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://i.pinimg.com/originals/5d/4c/3b/5d4c3b2a1f0e9d8c7b6a5f4e3d2c1b0a.jpg" alt="Car Interior Lighting"/>
+                <div class="card-body"><h3>Automotive</h3><p>Dashboard, dome lights, and off-road LED bars.</p></div>
             </div>
-            
-            <div class="featured-slider">
-                <div class="slider-container">
-                    <!-- Slide 1 -->
-                    <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1578632749014-ca77efd052eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Featured Anime 1">
-                        <div class="slide-content">
-                            <h3>Celestial Maiden</h3>
-                            <p>An exquisite artwork featuring a celestial maiden surrounded by stars and moonlight.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 2 -->
-                    <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1542736667-069246bdbc6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Featured Anime 2">
-                        <div class="slide-content">
-                            <h3>Blossom Guardian</h3>
-                            <p>A magical guardian of cherry blossoms in a serene spring landscape.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 3 -->
-                    <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Featured Anime 3">
-                        <div class="slide-content">
-                            <h3>Moonlight Dancer</h3>
-                            <p>An elegant dancer performing under the moonlight in a mystical forest.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 4 -->
-                    <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Featured Anime 4">
-                        <div class="slide-content">
-                            <h3>Starry Night</h3>
-                            <p>A dreamy character gazing at the stars on a peaceful night.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="slider-nav">
-                    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
-                    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
-                </div>
+            <div class="card">
+                <img src="https://i.pinimg.com/originals/6e/5f/4c/6e5f4c3b2a1f0e9d8c7b6a5f4e3d2c1b.jpg" alt="Solar Camping Lamp"/>
+                <div class="card-body"><h3>Solar & Camping</h3><p>Portable, rechargeable, eco-friendly lighting.</p></div>
+            </div>
+            <div class="card">
+                <img src="https://i.pinimg.com/originals/7f/6e/5d/7f6e5d4c3b2a1f0e9d8c7b6a5f4e3d2c.jpg" alt="Marine Boat Lights"/>
+                <div class="card-body"><h3>Marine</h3><p>Waterproof navigation and cabin illumination.</p></div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Our Gallery</h2>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>We Celebrate Anime Art</h2>
-                    <p>Our gallery is dedicated to showcasing the most beautiful and captivating anime girl illustrations from talented artists worldwide. We believe in the power of anime art to inspire, entertain, and connect people across cultures.</p>
-                    <p>Each artwork in our collection is carefully selected to ensure the highest quality and artistic value. We work directly with artists to bring you exclusive content you won't find anywhere else.</p>
-                    <p>Whether you're an anime enthusiast, an artist looking for inspiration, or simply someone who appreciates beautiful art, our gallery has something for you.</p>
-                    <a href="#" class="btn">Learn More</a>
-                </div>
-                
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About Anime Gallery">
-                </div>
-            </div>
+    <!-- Gallery from Pinterest -->
+    <section id="gallery" style="background:#111;">
+        <h2 class="section-title">Inspiration Gallery</h2>
+        <div class="grid">
+            <a href="https://www.pinterest.com/pin/1234567890/" target="_blank" class="card">
+                <img src="https://i.pinimg.com/originals/1a/2b/3c/1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p.jpg" alt="DIY 12V Lamp Project"/>
+            </a>
+            <a href="https://www.pinterest.com/pin/0987654321/" target="_blank" class="card">
+                <img src="https://i.pinimg.com/originals/2b/3c/4d/2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q.jpg" alt="Van Life Lighting"/>
+            </a>
+            <a href="https://www.pinterest.com/pin/1122334455/" target="_blank" class="card">
+                <img src="https://i.pinimg.com/originals/3c/4d/5e/3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r.jpg" alt="Off-Grid Cabin Setup"/>
+            </a>
         </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <details class="faq">
+            <summary>Can I connect a 12V DC lamp to AC power?</summary>
+            <p>No. You need a <strong>12V DC power supply</strong> or rectifier. Direct AC will damage the lamp.</p>
+        </details>
+        <details class="faq">
+            <summary>Why do some 12V systems flicker?</summary>
+            <p>Flicker usually comes from <strong>PWM dimmers</strong> or unstable voltage, not frequency.</p>
+        </details>
+        <details class="faq">
+            <summary>Is 12V safer than 220V?</summary>
+            <p>Yes. Lower voltage reduces shock risk, ideal for vehicles and outdoors.</p>
+        </details>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <h2>Ready to Build Your Own?</h2>
+        <p>Grab components, follow tutorials, and light up your project safely!</p>
+        <a> <a href="https://www.pinterest.com/search/pins/?q=12v%20dc%20lamp%20diy" target="_blank" class="btn">Explore DIY Ideas on Pinterest</a>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>AnimeGallery</h3>
-                    <p>Your premier destination for high-quality anime girl illustrations and artwork from talented artists worldwide.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#featured">Featured</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Categories</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Cute</a></li>
-                        <li><a href="#">Fantasy</a></li>
-                        <li><a href="#">School</a></li>
-                        <li><a href="#">Magical</a></li>
-                        <li><a href="#">Sci-Fi</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-envelope"></i> contact@animegallery.com</li>
-                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Anime Street, Tokyo, Japan</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2023 AnimeGallery. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--primary-color);"></i></p>
-            </div>
-        </div>
+    <footer>
+        <p>© 2025 12V DC Guide | Made with <i class="fas fa-heart" style="color:#ff6b35;"></i> for makers</p>
+        <p>Images sourced from <a href="https://www.pinterest.com" target="_blank">Pinterest</a> for inspiration</p>
     </footer>
 
-    <script>
-        // Simple slider functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const sliderContainer = document.querySelector('.slider-container');
-            const slides = document.querySelectorAll('.slide');
-            const prevBtn = document.querySelector('.prev-btn');
-            const nextBtn = document.querySelector('.next-btn');
-            let currentSlide = 0;
-            
-            function goToSlide(slideIndex) {
-                if (slideIndex < 0) {
-                    currentSlide = slides.length - 1;
-                } else if (slideIndex >= slides.length) {
-                    currentSlide = 0;
-                } else {
-                    currentSlide = slideIndex;
-                }
-                
-                sliderContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
-            }
-            
-            prevBtn.addEventListener('click', function() {
-                goToSlide(currentSlide - 1);
-            });
-            
-            nextBtn.addEventListener('click', function() {
-                goToSlide(currentSlide + 1);
-            });
-            
-            // Auto slide change every 5 seconds
-            setInterval(function() {
-                goToSlide(currentSlide + 1);
-            }, 5000);
-            
-            // Filter functionality
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    // In a real implementation, you would filter the gallery here
-                });
-            });
-            
-            // Mobile menu toggle
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const navLinks = document.querySelector('.nav-links');
-            
-            mobileMenu.addEventListener('click', function() {
-                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            });
-        });
-    </script>
 </body>
 </html>
