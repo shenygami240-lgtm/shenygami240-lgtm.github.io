@@ -3,21 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime Girls Gallery | Premium Collection</title>
+    <title>AnimeHub - Your Ultimate Anime Destination</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* CSS Variables */
-        :root {
-            --primary-color: #ff6b8b;
-            --secondary-color: #8a2be2;
-            --dark-color: #1a1a2e;
-            --light-color: #f8f9fa;
-            --text-color: #333;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-
-        /* Global Styles */
+        /* Full CSS (exactly your version) */
         * {
             margin: 0;
             padding: 0;
@@ -25,129 +14,87 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        :root {
+            --primary: #ff3e6c;
+            --secondary: #6c63ff;
+            --dark: #121212;
+            --dark-light: #1e1e1e;
+            --text: #ffffff;
+            --text-light: #b0b0b0;
+        }
+
         body {
-            background-color: #f5f5f5;
-            color: var(--text-color);
+            background-color: var(--dark);
+            color: var(--text);
             line-height: 1.6;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background: var(--secondary-color);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--dark-color);
-            display: inline-block;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-
-        /* Header Styles */
         header {
-            background: linear-gradient(135deg, var(--dark-color), #16213e);
-            color: white;
-            padding: 15px 0;
+            background-color: var(--dark-light);
+            padding: 1rem 2rem;
             position: sticky;
             top: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow);
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
-        .navbar {
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
             display: flex;
             align-items: center;
+            gap: 10px;
         }
 
         .logo i {
-            color: var(--primary-color);
-            margin-right: 10px;
+            color: var(--primary);
+            font-size: 2rem;
         }
 
-        .nav-links {
+        .logo h1 {
+            font-size: 1.8rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        nav ul {
             display: flex;
+            list-style: none;
+            gap: 2rem;
         }
 
-        .nav-links li {
-            margin-left: 25px;
-        }
-
-        .nav-links a {
+        nav a {
+            color: var(--text);
+            text-decoration: none;
             font-weight: 500;
-            transition: var(--transition);
+            transition: color 0.3s;
             position: relative;
         }
 
-        .nav-links a:hover {
-            color: var(--primary-color);
+        nav a:hover {
+            color: var(--primary);
         }
 
-        .nav-links a::after {
+        nav a::after {
             content: '';
             position: absolute;
             width: 0;
             height: 2px;
-            background: var(--primary-color);
             bottom: -5px;
             left: 0;
-            transition: var(--transition);
+            background-color: var(--primary);
+            transition: width 0.3s;
         }
 
-        .nav-links a:hover::after {
+        nav a:hover::after {
             width: 100%;
         }
 
@@ -156,27 +103,51 @@
             align-items: center;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 30px;
-            padding: 5px 15px;
+            padding: 0.5rem 1rem;
+            width: 300px;
         }
 
         .search-bar input {
             background: transparent;
             border: none;
-            color: white;
-            padding: 8px;
-            width: 200px;
+            color: var(--text);
+            width: 100%;
+            padding: 0.5rem;
             outline: none;
         }
 
-        .search-bar input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
+        .search-bar i {
+            color: var(--text-light);
         }
 
-        .search-bar button {
-            background: transparent;
-            border: none;
-            color: white;
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            font-weight: 600;
             cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text);
+            border: 1px solid var(--text-light);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .mobile-menu {
@@ -187,591 +158,274 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.8)), 
-                        url('https://i.pinimg.com/736x/0c/5e/8f/0c5e8f8d8e1e8e8e8e8e8e8e8e8e8e8e.jpg');
+            height: 80vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1633617477271-d4f351ff7c7c?auto=format&fit=crop&w=1470&q=80');
             background-size: cover;
             background-position: center;
-            color: white;
-            padding: 100px 0;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 1400px;
             margin: 0 auto;
+            width: 100%;
         }
 
-        .hero h1 {
+        .hero h2 {
             font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .hero p {
             font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            color: var(--text-light);
         }
 
         .hero-buttons {
             display: flex;
-            justify-content: center;
-            gap: 15px;
+            gap: 1rem;
         }
 
-        .hero-buttons .btn {
-            padding: 12px 30px;
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: var(--dark-color);
-        }
-
-        /* Categories Section */
-        .categories {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .category-filters {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-
-        .filter-btn {
-            padding: 8px 20px;
-            background: var(--light-color);
-            border-radius: 30px;
-            cursor: pointer;
-            transition: var(--transition);
-            font-weight: 500;
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .gallery-item {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-            height: 300px;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .item-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-            color: white;
-            padding: 20px;
-            transform: translateY(100%);
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover .item-overlay {
-            transform: translateY(0);
-        }
-
-        .item-overlay h3 {
-            margin-bottom: 5px;
-        }
-
-        .item-overlay p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        /* Featured Section */
-        .featured {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-        }
-
-        .featured-slider {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-        }
-
-        .slider-container {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .slide {
-            min-width: 100%;
-            position: relative;
-        }
-
-        .slide img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-        }
-
-        .slide-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-            color: white;
-            padding: 30px;
-        }
-
-        .slide-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .slider-nav {
-            position: absolute;
-            top: 50%;
-            width: 100%;
+        .section-header {
             display: flex;
             justify-content: space-between;
-            transform: translateY(-50%);
-            padding: 0 20px;
-        }
-
-        .slider-nav button {
-            background: rgba(255, 255, 255, 0.3);
-            color: white;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: var(--transition);
-            backdrop-filter: blur(5px);
-        }
-
-        .slider-nav button:hover {
-            background: rgba(255, 255, 255, 0.5);
-        }
-
-        /* About Section */
-        .about {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .about-content {
-            display: flex;
             align-items: center;
-            gap: 50px;
+            margin-bottom: 2rem;
         }
 
-        .about-text {
-            flex: 1;
-        }
-
-        .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--dark-color);
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        .about-image {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Stats Section */
-        .stats {
-            padding: 60px 0;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            text-align: center;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-
-        .stat-item {
-            padding: 20px;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .stat-text {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        /* Newsletter Section */
-        .newsletter {
-            padding: 80px 0;
-            background: var(--dark-color);
-            color: white;
-            text-align: center;
-        }
-
-        .newsletter-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .newsletter h2 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-        }
-
-        .newsletter p {
-            margin-bottom: 30px;
-            opacity: 0.8;
-        }
-
-        .newsletter-form {
-            display: flex;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: 12px 15px;
-            border: none;
-            border-radius: 30px 0 0 30px;
-            outline: none;
-        }
-
-        .newsletter-form button {
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 0 25px;
-            border-radius: 0 30px 30px 0;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .newsletter-form button:hover {
-            background: var(--secondary-color);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark-color);
-            color: white;
-            padding: 60px 0 20px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
+        .section-title {
+            font-size: 2rem;
             position: relative;
             padding-bottom: 10px;
         }
 
-        .footer-column h3::after {
+        .section-title::after {
             content: '';
             position: absolute;
             width: 50px;
             height: 3px;
-            background: var(--primary-color);
+            background: var(--primary);
             bottom: 0;
             left: 0;
         }
 
+        .anime-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+
+        .anime-card {
+            background-color: var(--dark-light);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .anime-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-image {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-info {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .rating {
+            color: gold;
+        }
+
+        footer {
+            background-color: var(--dark-light);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 0.8rem;
         }
 
         .footer-links a {
-            transition: var(--transition);
-            opacity: 0.8;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
         }
 
         .footer-links a:hover {
-            opacity: 1;
-            color: var(--primary-color);
+            color: var(--primary);
             padding-left: 5px;
         }
 
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            background: var(--primary-color);
-            transform: translateY(-5px);
-        }
-
-        .footer-bottom {
+        .copyright {
             text-align: center;
-            padding-top: 20px;
+            margin-top: 4rem;
+            padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
             font-size: 0.9rem;
-            opacity: 0.7;
-        }
-
-        /* Modal for Image View */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .modal-content img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            background: rgba(0, 0, 0, 0.5);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .about-image {
-                order: -1;
-            }
-            
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links, .search-bar {
-                display: none;
-            }
-            
-            .mobile-menu {
-                display: block;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .newsletter-form {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .newsletter-form input, .newsletter-form button {
-                border-radius: 30px;
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero {
-                padding: 60px 0;
-            }
-            
-            .categories, .featured, .about, .newsletter {
-                padding: 50px 0;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">
-                    <i class="fas fa-moon"></i>
-                    AnimeGallery
-                </a>
-                
-                <ul class="nav-links">
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#featured">Featured</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-dragon"></i>
+                <h1>AnimeHub</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Browse</a></li>
+                    <li><a href="#">Genres</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
-                
-                <div class="search-bar">
-                    <input type="text" placeholder="Search images...">
-                    <button><i class="fas fa-search"></i></button>
-                </div>
-                
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
             </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search anime...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="auth-buttons">
+                <button class="btn btn-secondary">Login</button>
+                <button class="btn btn-primary">Sign Up</button>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Discover Beautiful Anime Girls Art</h1>
-                <p>Explore our curated collection of high-quality anime girl illustrations from talented artists around the world. Find your next favorite artwork today!</p>
-                <div class="hero-buttons">
-                    <a href="#gallery" class="btn">Browse Gallery</a>
-                    <a href="#featured" class="btn btn-secondary">View Featured</a>
+        <div class="hero-content">
+            <h2>Welcome to AnimeHub</h2>
+            <p>Your gateway to explore thousands of anime shows, characters, and news updates all in one place.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">Start Watching</button>
+                <button class="btn btn-secondary">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h3 class="section-title">Featured Anime</h3>
+            <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" class="card-image" alt="Attack on Titan">
+                <div class="card-content">
+                    <h4 class="card-title">Attack on Titan</h4>
+                    <div class="card-info">
+                        <span>Action</span>
+                        <span class="rating">★ 9.1</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="anime-card">
+                <img src="https://cdn.myanimelist.net/images/anime/1517/100633.jpg" class="card-image" alt="Demon Slayer">
+                <div class="card-content">
+                    <h4 class="card-title">Demon Slayer</h4>
+                    <div class="card-info">
+                        <span>Adventure</span>
+                        <span class="rating">★ 8.9</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="categories" id="gallery">
-        <div class="container">
-            <div class="section-title">
-                <h2>Anime Girls Gallery</h2>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>About AnimeHub</h3>
+                <p>Your ultimate destination for anime news, reviews, and streaming recommendations.</p>
             </div>
-            
-            <div class="category-filters">
-                <div class="filter-btn active">All</div>
-                <div class="filter-btn">Cute</div>
-                <div class="filter-btn">Fantasy</div>
-                <div class="filter-btn">School</div>
-                <div class="filter-btn">Magical</div>
-                <div class="filter-btn">Sci-Fi</div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Browse</a></li>
+                    <li><a href="#">Genres</a></li>
+                    <li><a href="#">News</a></li>
+                </ul>
             </div>
-            
-            <div class="gallery-grid">
-                <!-- Gallery Items with Pinterest Images -->
-                <div class="gallery-item">
-                    <img src="https://i.pinimg.com/736x/5a/3a/3d/5a3a3d3e3e3e3e3e3e3e3e3e3e3e3e3e.jpg" alt="Anime Girl 1">
-                    <div class="item-overlay">
-                        <h3>Spring Blossom</h3>
-                        <p>By SakuraArtist</p>
-                    </div>
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
-                
-                <div class="gallery-item">
-                    <img src="https://i.pinimg.com/736x/8a/8a/8a/8a8a8a8a8a8a8a8a8a8a8a8a8a8a8a8a.jpg" alt="Anime Girl 2">
-                    <div class="item-overlay">
-                        <h3>Moonlight Dancer</h3>
-                        <p>By LunaDreams</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="https://i.pinimg.com/736x/9b/9b/9b/9b9b9b9b9b9b9b9b9b9b9b9b9b9b9b9b.jpg" alt="Anime Girl 3">
-   
+            </div>
+        </div>
+        <p class="copyright">
+            © 2025 AnimeHub. All rights reserved.
+        </p>
+    </footer>
+</body>
+</html>
